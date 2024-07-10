@@ -6,8 +6,6 @@ namespace СalculatorHomeWork
     {
         public static void Main(string[] args)
         {
-            char again='Y';
-            while (again == 'Y') 
             {
                 double total;
                 double a;
@@ -24,7 +22,8 @@ namespace СalculatorHomeWork
 
                 Console.WriteLine("enter the second number and press enter");
                 b = Convert.ToDouble(Console.ReadLine());
-                
+              
+
 
                 if (oper == '+')
                 {
@@ -33,8 +32,10 @@ namespace СalculatorHomeWork
                 }
                 else if (oper == '-')
                 {
+
                     total = a - b;
                     Console.WriteLine("Result: " + total);
+
                 }
                 else if (oper == '*')
                 {
@@ -44,9 +45,16 @@ namespace СalculatorHomeWork
 
                 else if (oper == '/')
                 {
-                    total = a / b;
-                    Console.WriteLine(total);
-                    Console.WriteLine("Result: " + total);
+                    if(b!=0)
+                    {
+                        total = a / b;
+                        Console.WriteLine(total);
+                        Console.WriteLine("Result: " + total);
+                    }
+                    else
+                    {
+                        Console.WriteLine("You cannot divide by 0!");
+                    }
                 }
                 else 
                 {
@@ -54,9 +62,9 @@ namespace СalculatorHomeWork
                 }
                
                 { 
-                    Console.WriteLine("You want to continue counting (Y/N)"); 
                     again=Convert.ToChar(Console.ReadLine());
                 }
+                
                 
             }
 
